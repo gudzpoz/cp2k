@@ -66,11 +66,6 @@
     map)
   "Keymap for `cp2k-mode'.")
 
-;;;; Syntax indentation
-(defvar cp2k-indent
-  2
-  "standard indentation for in `cp2k-mode'")
-
 (defconst cp2k-emptyline
   "^\\s-*$"
   "regexp matching an empty line in `cp2k-mode'")
@@ -210,7 +205,7 @@
           (setq indent (current-indentation))
           (if (and (looking-at cp2k-opening)
                    (not (looking-at cp2k-closing)))
-              (setq indent (+ indent cp2k-indent)))
+              (setq indent (+ indent tab-width)))
           (throw 'indentation indent)))))
     ;; move cursor to indentation point if in the beginning white
     ;; space otherwise leave unchanged
@@ -263,3 +258,5 @@
 
 ;;;; Last line
 (provide 'cp2k-mode)
+
+;;; cp2k-mode.el ends here
