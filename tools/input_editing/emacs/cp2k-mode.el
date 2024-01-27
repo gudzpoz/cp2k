@@ -1,6 +1,17 @@
-;;;;; Emacs major mode for cp2k input, written by Lianheng Tong
-;;;;; Copyright (c) Lianheng Tong
-;;;;; Last modify date: Saturday, 2014/01/25
+;;; cp2k-mode.el --- Emacs major mode for cp2k input  -*- lexical-binding:t -*-
+
+;; Copyright (c) Lianheng Tong
+
+;; Author: Lianheng Tong
+;; Keywords: cp2k
+;; Version: 2014.01.25
+;; URL: https://github.com/cp2k/cp2k
+
+;;; Commentary:
+;;
+;;  This package provides a major mode for editing CP2K input files.
+;;
+;;; Code:
 
 ;;;; Syntax highlighting of keywords
 (defconst cp2k-font-lock-keywords
@@ -212,6 +223,7 @@
 (defvar cp2k-mode-hook nil)
 
 ;;;; Entry function
+;;;###autoload
 (define-derived-mode cp2k-mode fundamental-mode "cp2k"
   "Major mode for editing cp2k input. Copyright (c) Lianheng Tong 2013/12/06"
   :syntax-table cp2k-mode-syntax-table
